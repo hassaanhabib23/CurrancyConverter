@@ -1,3 +1,4 @@
+<?php include "app_constants.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,11 +16,7 @@
         </label><br>
         <label for="fromCountry" class="labels"><strong>From</strong></label>
         <select name="fromCountry" class="selectStyling">
-            <option value="pakistan">Pakistan</option>
-            <option value="indian">India</option>
-            <option value="bangladesh">Bangladesh</option>
-            <option value="saudia">Saudia</option>
-            <option value="USdollar">US Dollar</option>
+            <?php printCurrencyOptions(); ?>
         </select>
         <label for="toCountry" class="labels"><strong>To</strong></label>
         <select name="toCountry" class="selectStyling">
