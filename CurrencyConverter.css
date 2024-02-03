@@ -1,0 +1,23 @@
+#firstlabel{
+    margin: 0px auto;
+    font-size: larger;
+}
+.labels{
+    font-size: large ;
+}
+.selectStyling{
+    width: 200px;
+    height: 30px;
+    font-weight:normal;
+}
+#amountfield{
+    width: 200px;
+    height: 25px;
+}
+#k{
+    width: 104px;
+    height: 39px;
+    font-size: large;
+    background: lightcyan;
+    margin: 0px auto;
+}
