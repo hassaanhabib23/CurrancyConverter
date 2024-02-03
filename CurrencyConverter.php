@@ -16,7 +16,9 @@
         </label><br>
         <label for="fromCountry" class="labels"><strong>From</strong></label>
         <select name="fromCountry" class="selectStyling">
-            <?php printCurrencyOptions(); ?>
+            <?php foreach ($currencies as $currency) { ?>
+                <option value="<? $currency->currency_code ?>"><? $currency->currency_code ?> - <? $currency->country ?></option>";
+            <?php } ?>
         </select>
         <label for="toCountry" class="labels"><strong>To</strong></label>
         <select name="toCountry" class="selectStyling">
