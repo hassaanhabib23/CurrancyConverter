@@ -3,20 +3,23 @@ $currencies = array(
   (object) [
     'currency_code' => 'PKR',
     'country' => 'Pakistan',
-    'currency_rate'=> 280
+    'currency_rate'=> 279.65 
   ],
   (object) [
     'currency_code' => 'INR',
-    'country' => 'India'
+    'country' => 'India',
+    'currency_rate'=>83.00 
+
   ],
   (object) [
     'currency_code' => 'BDT',
-    'country' => 'Bangladesh'
+    'country' => 'Bangladesh',
+    'currency_rate'=>109.77 
   ],
   (object) [
     'currency_code' => 'US',
     'country' => 'Dollar',
-    'currency_rate'=> 0.8
+    'currency_rate'=>1.0
   ]
 );
 
@@ -27,5 +30,6 @@ function printCurrencyOptions()
     // "{$currency->currency_code} - {$currency->country}"
     // echo '<option value="'.$currency->currency_code.'">'.$currency->currency_code.' - '.$currency->country.'</option>';
     echo "<option value='{$currency->currency_code}'>{$currency->currency_code} - {$currency->country}</option>";
+
   }
 }
