@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="CurrencyConverter.css">
 </head>
 <body>
+<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <div class="container">
         <u id="firstlabel">
             Currency Converter
@@ -15,16 +16,18 @@
         <strong class="labelforamount">Enter Amount:</strong>
         <input type="text" name="amount" id="amountfield" placeholder="0.00"><br><br>
         <label for="fromCountry" class="labels"><strong>From</strong></label>
-        <select name="fromCountry" class="selectStyling">
+        <select name="fromCountry" class="selectStyling" required>
             <?php foreach ($currencies as $currency) { ?>
-                <option value="<?php echo $currency->currency_code ?>" placeholder="sdfdsgfd">
+                <option value="none" selected disabled hidden>Select Country</option> 
+                <option value="<?php echo $currency->currency_code ?>">
                     <?php echo $currency->currency_code ?> - <?php echo $currency->country ?>
                 </option>
             <?php } ?>
-        </select>
+        </select  >
         <label for="toCountry" class="labels"><strong>To</strong></label>
-        <select name="toCountry" class="selectStyling">
+        <select name="toCountry" class="selectStyling" required>
         <?php foreach ($currencies as $currency) { ?>
+            <option value="none" selected disabled hidden>Select Country</option> 
                 <option value="<?php echo $currency->currency_code ?>">
                     <?php echo $currency->currency_code ?> - <?php echo $currency->country ?>
                 </option>
@@ -36,6 +39,23 @@
         </div>
         
     </div>
+    </form>
+    <?php 
+    
+    if(isset($_REQUEST['btnsubmit'])){
+        $enteredAmount=$_POST["amount"];
+        if(empty($enteredAmount)){
+            echo "field is empty";
+        }
+        
+        else if (is_numeric($enteredAmount)){
+            
+        }
+        else {
+           echo $enteredAmount;
+        }
+    }
+    ?>
 </body>
 
 </html>

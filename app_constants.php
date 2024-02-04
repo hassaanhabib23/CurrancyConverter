@@ -1,12 +1,9 @@
 <?php
 $currencies = array(
-  (object)[
-    'currency_code' => 'Select',
-    'country' => 'Country'
-  ],
   (object) [
     'currency_code' => 'PKR',
-    'country' => 'Pakistan'
+    'country' => 'Pakistan',
+    'currency_rate'=> 280
   ],
   (object) [
     'currency_code' => 'INR',
@@ -15,6 +12,11 @@ $currencies = array(
   (object) [
     'currency_code' => 'BDT',
     'country' => 'Bangladesh'
+  ],
+  (object) [
+    'currency_code' => 'US',
+    'country' => 'Dollar',
+    'currency_rate'=> 0.8
   ]
 );
 

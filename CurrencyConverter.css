@@ -29,9 +29,11 @@ button:hover {
     height: 25px;
     margin-top: 50px;
 }
-.labelforamount{
+
+.labelforamount {
     font-size: larger;
 }
+
 .buttonStyling {
     width: 104px;
     height: 39px;
