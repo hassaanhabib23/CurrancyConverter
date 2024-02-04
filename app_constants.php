@@ -1,5 +1,9 @@
 <?php
 $currencies = array(
+  (object)[
+    'currency_code' => 'Select',
+    'country' => 'Country'
+  ],
   (object) [
     'currency_code' => 'PKR',
     'country' => 'Pakistan'
