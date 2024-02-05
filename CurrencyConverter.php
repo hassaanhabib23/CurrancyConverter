@@ -14,7 +14,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "currenies_db";
+    $dbname = "currencies_db";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -27,8 +27,7 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // output data of each row
-
+        
     } else {
         echo "0 results";
     }
