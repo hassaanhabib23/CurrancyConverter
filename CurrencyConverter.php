@@ -61,7 +61,7 @@
             $reponse = file_get_contents($url);
             $rates = json_decode($reponse, true);
             foreach ($rates as $element) {
-                $rate=$element['value'];
+                $rate = $element['value'];
             }
             $results = $enteredAmount * $rate;
         }
@@ -79,7 +79,7 @@
             <select name="fromCountry" class="selectStyling">
                 <option value="" hidden>Select Country</option>
                 <?php foreach ($currencies as $currency) { ?>
-                    <option <?php echo $toCountry == $currency->currency_code ? "selected" : ""; ?> value="<?php echo $currency->currency_code ?>">
+                    <option <?php echo $fromCountry == $currency->currency_code ? "selected" : ""; ?> value="<?php echo $currency->currency_code ?>">
                         <?php echo $currency->currency_code ?> - <?php echo $currency->country_name ?>
                     </option>
                 <?php } ?>
@@ -99,8 +99,8 @@
                                                     }
                                                     ?></p>
             <div class="buttonStyling2">
-                <button name="btnsubmit" class="buttonStyling">Convert</button>
-                <button name="btnreset" class="buttonStyling">Reset</button>
+                <button name="btnsubmit" type="submit" class="buttonStyling">Convert</button>
+                <button name="btnreset" type="reset" class="buttonStyling">Reset</button>
             </div>
             <p style="font-size: 25px;"><?php if (isset($results)) { ?>
                     <strong><?php echo "Amount is : " . $results; ?></strong>
