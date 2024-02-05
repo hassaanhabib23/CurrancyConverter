@@ -1,4 +1,3 @@
-<?php include "app_constants.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,23 +10,15 @@
 
 <body>
     <?php
-
-
-
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "currencies_db";
-
-    // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
     $sql = "SELECT currency_id, currency_code,country_name  FROM currencies";
-
     $result = $conn->query($sql);
     $currencies = array();
     if ($result->num_rows > 0) {
@@ -36,7 +27,6 @@
         }
     }
     $conn->close();
-
     $enteredAmount = '';
     $fromCountry = '';
     $toCountry = '';
@@ -61,13 +51,12 @@
             $reponse = file_get_contents($url);
             $rates = json_decode($reponse, true);
             foreach ($rates as $element) {
-                $rate=$element['value'];
+                $rate = $element['value'];
             }
             $results = $enteredAmount * $rate;
         }
     }
     ?>
-
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="container">
             <u id="firstlabel">
@@ -79,7 +68,7 @@
             <select name="fromCountry" class="selectStyling">
                 <option value="" hidden>Select Country</option>
                 <?php foreach ($currencies as $currency) { ?>
-                    <option <?php echo $toCountry == $currency->currency_code ? "selected" : ""; ?> value="<?php echo $currency->currency_code ?>">
+                    <option <?php echo $fromCountry == $currency->currency_code ? "selected" : ""; ?> value="<?php echo $currency->currency_code ?>">
                         <?php echo $currency->currency_code ?> - <?php echo $currency->country_name ?>
                     </option>
                 <?php } ?>
@@ -109,5 +98,4 @@
         </div>
     </form>
 </body>
-
 </html>
