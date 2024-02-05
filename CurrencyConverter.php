@@ -24,14 +24,17 @@
     }
 
     $sql = "SELECT currency_id, currency_code,country_name  FROM currencies";
-    $result = $conn->query($sql);
 
+    $result = $conn->query($sql);
+    $currencies = array();
     if ($result->num_rows > 0) {
-        
+        // output data of each row
+
     } else {
         echo "0 results";
     }
     $conn->close();
+
     $enteredAmount = '';
     $fromCountry = '';
     $toCountry = '';
@@ -81,18 +84,18 @@
             <label for="fromCountry" class="labels"><strong>From</strong></label>
             <select name="fromCountry" class="selectStyling">
                 <option value="" hidden>Select Country</option>
-                <?php while ($row = $result->fetch_assoc()) { ?>
-                    <option <?php echo $fromCountry ==  $row["currency_code"]  ? "selected" : ""; ?> value="<?php echo  $row["currency_code"] ?>">
-                        <?php echo $row["currency_code"] ?> - <?php echo $row["country_name"] ?>
+                <?php foreach ($currencies as $currency) { ?>
+                    <option <?php echo $toCountry == $currency->currency_code ? "selected" : ""; ?> value="<?php echo $currency->currency_code ?>">
+                        <?php echo $currency->currency_code ?> - <?php echo $currency->country_name ?>
                     </option>
                 <?php } ?>
             </select>
             <label for="toCountry" class="labels"><strong>To</strong></label>
             <select name="toCountry" class="selectStyling">
                 <option value="" hidden>Select Country</option>
-                <?php while ($row = $result->fetch_assoc()) { ?>
-                    <option <?php echo $toCountry ==  $row["currency_code"]  ? "selected" : ""; ?> value="<?php echo  $row["currency_code"] ?>">
-                        <?php echo $row["currency_code"] ?> - <?php echo $row["country_name"] ?>
+                <?php foreach ($currencies as $currency) { ?>
+                    <option <?php echo $toCountry == $currency->currency_code ? "selected" : ""; ?> value="<?php echo $currency->currency_code ?>">
+                        <?php echo $currency->currency_code ?> - <?php echo $currency->country_name ?>
                     </option>
                 <?php } ?>
             </select>
