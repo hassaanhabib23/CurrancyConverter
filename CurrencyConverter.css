@@ -3,9 +3,11 @@ body {
 }
 
 #firstlabel {
-    font-size: 84px;
+    font-size: 60px;
 }
-
+select:hover{
+    cursor: pointer;
+}
 .labels {
     font-size: larger;
     margin-right: 8px;
