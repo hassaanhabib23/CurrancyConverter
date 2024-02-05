@@ -11,6 +11,28 @@
 
 <body>
     <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "currenies_db";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT currency_id, currency_code,country_name  FROM currencies";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
     $enteredAmount = '';
     $fromCountry = '';
     $toCountry = '';
@@ -22,6 +44,8 @@
             $prompt = "Fields are Empty";
         } else if (empty($enteredAmount)) {
             $prompt = "Enter amount first";
+        } else if (!is_numeric($enteredAmount)) {
+            $prompt = "Field accept only Integer";
         } else if (empty($fromCountry)) {
             $prompt = "Please select Country first (From dropdown)";
         } else if (empty($toCountry)) {
@@ -43,7 +67,7 @@
                     break;
                 }
             }
-            $result = $enteredAmount * ($torate / $fromrate);
+            $results = $enteredAmount * ($torate / $fromrate);
         }
     }
     ?>
@@ -58,18 +82,18 @@
             <label for="fromCountry" class="labels"><strong>From</strong></label>
             <select name="fromCountry" class="selectStyling">
                 <option value="" hidden>Select Country</option>
-                <?php foreach ($currencies as $currency) { ?>
-                    <option <?php echo $fromCountry == $currency->currency_code ? "selected" : ""; ?> value="<?php echo $currency->currency_code ?>">
-                        <?php echo $currency->currency_code ?> - <?php echo $currency->country ?>
+                <?php while ($row = $result->fetch_assoc()) { ?>
+                    <option <?php echo $fromCountry ==  $row["currency_code"]  ? "selected" : ""; ?> value="<?php echo  $row["currency_code"] ?>">
+                        <?php echo $row["currency_code"] ?> - <?php echo $row["country_name"] ?>
                     </option>
                 <?php } ?>
             </select>
             <label for="toCountry" class="labels"><strong>To</strong></label>
             <select name="toCountry" class="selectStyling">
                 <option value="" hidden>Select Country</option>
-                <?php foreach ($currencies as $currency) { ?>
-                    <option <?php echo $toCountry == $currency->currency_code ? "selected" : ""; ?> value="<?php echo $currency->currency_code ?>">
-                        <?php echo $currency->currency_code ?> - <?php echo $currency->country ?>
+                <?php while ($row = $result->fetch_assoc()) { ?>
+                    <option <?php echo $toCountry ==  $row["currency_code"]  ? "selected" : ""; ?> value="<?php echo  $row["currency_code"] ?>">
+                        <?php echo $row["currency_code"] ?> - <?php echo $row["country_name"] ?>
                     </option>
                 <?php } ?>
             </select>
@@ -82,8 +106,8 @@
                 <button name="btnsubmit" class="buttonStyling">Convert</button>
                 <button name="btnreset" class="buttonStyling">Reset</button>
             </div>
-            <p style="font-size: 25px;"><?php if (isset($result)) { ?>
-                    <strong><?php echo "Amount is : " . $result; ?></strong>
+            <p style="font-size: 25px;"><?php if (isset($results)) { ?>
+                    <strong><?php echo "Amount is : " . $results; ?></strong>
                 <?php } ?>
             </p>
         </div>
