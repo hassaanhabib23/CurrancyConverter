@@ -11,6 +11,9 @@
 
 <body>
     <?php
+
+
+
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -28,10 +31,9 @@
     $result = $conn->query($sql);
     $currencies = array();
     if ($result->num_rows > 0) {
-        // output data of each row
-
-    } else {
-        echo "0 results";
+        while ($rows = mysqli_fetch_object($result)) {
+            array_push($currencies, $rows);
+        }
     }
     $conn->close();
 
@@ -55,21 +57,13 @@
         } else if ($fromCountry == $toCountry) {
             $prompt = "Countries cannot same";
         } else {
-            $fromrate;
-            $torate;
-            foreach ($currencies as $currency) {
-                if ($fromCountry == $currency->currency_code) {
-                    $fromrate = $currency->currency_rate;
-                    break;
-                }
+            $url = "https://wise.com/rates/history+live?source=$fromCountry&target=$toCountry&length=1";
+            $reponse = file_get_contents($url);
+            $rates = json_decode($reponse, true);
+            foreach ($rates as $element) {
+                $rate=$element['value'];
             }
-            foreach ($currencies as $currency1) {
-                if ($toCountry == $currency1->currency_code) {
-                    $torate = $currency1->currency_rate;
-                    break;
-                }
-            }
-            $results = $enteredAmount * ($torate / $fromrate);
+            $results = $enteredAmount * $rate;
         }
     }
     ?>
