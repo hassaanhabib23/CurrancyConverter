@@ -88,8 +88,8 @@
                                                     }
                                                     ?></p>
             <div class="buttonStyling2">
-                <button name="btnsubmit" class="buttonStyling">Convert</button>
-                <button name="btnreset" class="buttonStyling">Reset</button>
+                <button name="btnsubmit" type="submit" class="buttonStyling">Convert</button>
+                <button name="btnreset" type="reset" class="buttonStyling">Reset</button>
             </div>
             <p style="font-size: 25px;"><?php if (isset($results)) { ?>
                     <strong><?php echo "Amount is : " . $results; ?></strong>
