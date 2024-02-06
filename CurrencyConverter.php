@@ -54,6 +54,9 @@
                 $rate = $element['value'];
             }
             $results = $enteredAmount * $rate;
+            if(isset($_REQUEST['btnreset'])){
+                echo "fdgsdf";
+            }
         }
     }
     ?>
@@ -61,7 +64,11 @@
         <div class="container">
             <u id="firstlabel">
                 Currency Converter
-            </u><br>
+            </u><br><br>
+            <div class="buttondiv">
+                <a href="http://localhost/CurrencyConverter/login2.php" class="button1">SignIn</a>
+                <a href="http://localhost/CurrencyConverter/signupForm.php" class="button2">SignUp</a>
+            </div><br>
             <strong class="labelforamount">Enter Amount:</strong>
             <input type="number" name="amount" value="<?php echo $enteredAmount; ?>" autocomplete="off" id="amountfield" placeholder="0.00" min=0><br><br>
             <label for="fromCountry" class="labels"><strong>From</strong></label>
@@ -87,10 +94,15 @@
                                                         echo $prompt;
                                                     }
                                                     ?></p>
-            <div class="buttonStyling2">
+            <div class="buttonStyling3">
                 <button name="btnsubmit" type="submit" class="buttonStyling">Convert</button>
-                <button name="btnreset" type="reset" class="buttonStyling">Reset</button>
+                <button name="btnreset" type="reset" class="buttonStyling" id="reset" onclick="resetbutton()">Reset</button>
             </div>
+            <script>
+                function resetbutton(){
+                    document.getElementById('amount').value="";
+                }
+            </script>
             <p style="font-size: 25px;"><?php if (isset($results)) { ?>
                     <strong><?php echo "Amount is : " . $results; ?></strong>
                 <?php } ?>
@@ -98,4 +110,5 @@
         </div>
     </form>
 </body>
+
 </html>
