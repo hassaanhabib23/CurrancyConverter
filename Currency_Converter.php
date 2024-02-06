@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
-    <link rel="stylesheet" href="CurrencyConverter.css">
+    <link rel="stylesheet" href="Currency_Converter.css">
 </head>
 
 <body>
@@ -54,7 +54,7 @@
                 $rate = $element['value'];
             }
             $results = $enteredAmount * $rate;
-            if(isset($_REQUEST['btnreset'])){
+            if (isset($_REQUEST['btnreset'])) {
                 echo "fdgsdf";
             }
         }
@@ -99,8 +99,8 @@
                 <button name="btnreset" type="reset" class="buttonStyling" id="reset" onclick="resetbutton()">Reset</button>
             </div>
             <script>
-                function resetbutton(){
-                    document.getElementById('amount').value="";
+                function resetbutton() {
+                    document.getElementById('amount').value = "";
                 }
             </script>
             <p style="font-size: 25px;"><?php if (isset($results)) { ?>

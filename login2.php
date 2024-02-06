@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="loginStyle.css">
+    <link rel="stylesheet" href="login_Style.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "registration_db";
+    $dbname = "currencies_db";
     $conn = new mysqli($servername, $username, $password, $dbname);
     $sql = "SELECT email,passwords FROM registration_detail";
     $data = $conn->query($sql);
