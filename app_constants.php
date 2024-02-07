@@ -1,30 +1,27 @@
 <?php
+$currencies = array(
+  (object) [
+    'currency_code' => 'PKR',
+    'country' => 'Pakistan',
+    'currency_rate' => 279.65
+  ],
+  (object) [
+    'currency_code' => 'INR',
+    'country' => 'India',
+    'currency_rate' => 83.00
 
-$base_url = "http://" . $_SERVER['SERVER_NAME'] . dirname($_SERVER["REQUEST_URI"] . '?');
-
-// $currencies = array(
-//   (object) [
-//     'currency_code' => 'PKR',
-//     'country' => 'Pakistan',
-//     'currency_rate' => 279.65
-//   ],
-//   (object) [
-//     'currency_code' => 'INR',
-//     'country' => 'India',
-//     'currency_rate' => 83.00
-
-//   ],
-//   (object) [
-//     'currency_code' => 'BDT',
-//     'country' => 'Bangladesh',
-//     'currency_rate' => 109.77
-//   ],
-//   (object) [
-//     'currency_code' => 'USD',
-//     'country' => 'Dollar',
-//     'currency_rate' => 1.0
-//   ]
-// );
+  ],
+  (object) [
+    'currency_code' => 'BDT',
+    'country' => 'Bangladesh',
+    'currency_rate' => 109.77
+  ],
+  (object) [
+    'currency_code' => 'USD',
+    'country' => 'Dollar',
+    'currency_rate' => 1.0
+  ]
+);
 function printCurrencyOptions()
 {
   global $currencies;

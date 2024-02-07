@@ -1,12 +1,12 @@
 .container {
     width: 390px;
-    height: auto;
+    height: 445px;
     margin: 0 auto;
+    text-align: center;
     background-color: white;
     padding-top: 5px;
     border-radius: 30px;
-    margin-top: 100px;
-    min-height: 445px;
+    margin-top: 200px;
 }
 
 body {
@@ -20,7 +20,7 @@ button:hover {
 }
 
 .fieldStyling {
-    width: 300px;
+    width: 240px;
     height: 30px;
 }
 
@@ -28,14 +28,13 @@ button:hover {
     font-size: 35px;
 }
 
-.buttonStyling {
+.signupbutton {
+    display: inline-block;
+    text-decoration: none;
     border-radius: 35px;
     background-color: rgb(129, 129, 222);
     color: white;
     width: 247px;
-    height: 35px;
-    font-size: 19px;
-    border: none;
+    height: 30px;
+    padding-top: 10px;
 }
-
-.signupbutton {}
