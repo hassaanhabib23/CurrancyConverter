@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(129, 129, 222);
+}
+
+.buttonstyling {
+    height: 30px;
+    display: inline-block;
+    width: 100px;
+    margin-right: 41px;
+    background-color: brown;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 40px;
+    padding-top: 5px;
+    font-size: 25px;
+}
+
+table,
+th,
+td {
+    border: 1px solid;
+    text-align: center;
+    background-color: sienna;
+    color: white;
+    font-size: larger;
+}
+
+.container {
+    width: 570px;
+    margin: 0 auto;
+    margin-left: 560px;
+    text-align: center;
+    margin-top: 190px;
+}
+
+.btnlogout {
+    width: 130px;
+    height: 45px;
+    background-color: rgb(12, 81, 22);
+    color: white;
+    border: none;
+    border-radius: 35px;
+    font-size: 19px
+}
+
+.headstyling {
+    width: 500px;
+    margin: 0 auto;
+    margin-left: 73%;
+}
