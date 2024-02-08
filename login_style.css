@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(129, 129, 222);
+}
+
+.container {
+    width: 375px;
+    height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    margin-top: 200px;
+    padding-top: 40px;
+    border-radius: 30px;
+}
+
+.loginheading {
+    font-size: 35px;
+
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: cornflowerblue;
+}
+
+.fieldStyling {
+    width: 240px;
+    height: 30px;
+}
+
+.buttonStyling {
+    width: 247px;
+    height: 45px;
+    background-color: rgb(129, 129, 222);
+    color: white;
+    border: none;
+    border-radius: 35px;
+    font-size: 19px
+}

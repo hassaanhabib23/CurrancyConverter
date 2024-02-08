@@ -1,0 +1,106 @@
+body {
+    background-color: sandybrown;
+}
+
+#firstlabel {
+    font-size: 60px;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+.labels {
+    font-size: larger;
+    margin-right: 8px;
+    margin-left: 3px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: cornflowerblue;
+}
+
+.selectStyling {
+    width: 210px;
+    height: 30px;
+    font-weight: normal;
+    margin-top: 7px;
+}
+
+#amountfield {
+    width: 380px;
+    height: 25px;
+    margin-top: 50px;
+}
+
+.labelforamount {
+    font-size: larger;
+}
+
+.buttonStyling {
+    width: 104px;
+    height: 39px;
+    font-size: large;
+    text-align: center;
+    background: rgb(0, 70, 156);
+    margin: 25px auto;
+    color: antiquewhite;
+}
+
+.buttonStyling {
+    margin-left: 50px;
+}
+
+a:hover {
+    background-color: cornflowerblue;
+}
+
+.container {
+    width: 700px;
+    height: 420px;
+    margin: 170px auto;
+    text-align: center;
+    background-color: white;
+    border-radius: 70px;
+}
+
+.buttondiv {
+    display: inline-block;
+}
+
+.button1 {
+    height: 30px;
+    display: inline-block;
+    width: 100px;
+    margin-right: 41px;
+    background-color: brown;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 40px;
+    padding-top: 5px;
+    font-size: 25px;
+}
+
+.button2 {
+    height: 30px;
+    display: inline-block;
+    width: 100px;
+    background-color: rgb(8, 43, 20);
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 25px;
+}
+
+.buttonStyling2 {
+    width: 140px;
+    height: 30px;
+    background-color: teal;
+    color: white;
+    font-size: large;
+} 0
